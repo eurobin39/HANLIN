@@ -1,0 +1,32 @@
+{
+  "name": "hanlin",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Euro Bae",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eurobin39/HANLIN.git"
+  },
+  "keywords": [
+    "HANLIN"
+  ],
+  "bugs": {
+    "url": "https://github.com/eurobin39/HANLIN/issues"
+  },
+  "homepage": "https://github.com/eurobin39/HANLIN#readme",
+  "dependencies": {
+    "@apollo/server": "^4.10.0",
+    "gql": "^1.1.2",
+    "graphql": "^16.8.1",
+    "graphql-tool": "^1.0.0",
+    "pg": "^8.11.3"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.23.9"
+  }
+}
