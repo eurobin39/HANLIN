@@ -21,12 +21,18 @@
   "homepage": "https://github.com/eurobin39/HANLIN#readme",
   "dependencies": {
     "@apollo/server": "^4.10.0",
+    "@babel/cli": "^7.23.9",
+    "@prisma/client": "^5.9.0",
+    "dotenv": "^16.4.1",
     "gql": "^1.1.2",
     "graphql": "^16.8.1",
     "graphql-tool": "^1.0.0",
-    "pg": "^8.11.3"
+    "pg": "^8.11.3",
+    "prisma": "^5.9.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.23.9"
+    "@babel/core": "^7.23.9",
+    "@babel/node": "^7.23.9",
+    "nodemon": "^3.0.3"
   }
 }
