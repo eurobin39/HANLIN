@@ -1,8 +1,28 @@
-// typeDefs.js
-import { gql } from 'apollo-server';
+// typedefs.js
 
-export const typeDefs = gql`
+// 여기에 필요한 typedefs를 정의합니다.
+const typeDefs = `
   type Query {
-    hello: String
+    seeProfile(username: String!): User
+  }
+  type Mutation {
+    reateAccount(
+        firstName: String!
+        lastName: String
+        username: String!
+        email: String!
+        password: String!
+      ): User
+  }
+  type User {
+    id: String!
+    firstName: String!
+    lastName: String
+    username: String!
+    email: String!
+    createdAt: String!
+    updatedAt: String!
   }
 `;
+
+export { typeDefs };
