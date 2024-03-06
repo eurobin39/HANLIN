@@ -7,9 +7,9 @@ const Mutation = {
     const salt = bcrypt.genSaltSync(10);
     const hashedPassword = await bcrypt.hashSync(password, salt);
 
-    const existingUser = client.user.findFirst({
+    const existingUser = await client.user.findFirst({
         where:{
-            or: [
+            OR: [
                 {
                 userName,
                 },
@@ -19,20 +19,24 @@ const Mutation = {
             ],
         },
     });
-    console.log(existingUser);
+    
+    if (existingUser) {
+        throw new Error("This username/email is already taken.");
+      }
+      
+    
     
 
-    
-
-    return client.user.create(
-        {
-            userName,
-            email,
-            firstName,
-            lastName,
-            password : hashedPassword,  
+    return client.user.create({
+        data: {
+          userName,
+          email,
+          firstName,
+          lastName,
+          password: hashedPassword,
         },
-    );
+      });
+      
   },
 };
 

@@ -1,12 +1,16 @@
+import client from "../client.js";
 
 
 const Query = {
   seeProfile: async (_, { userName }) => {
-    const user = await getUserByUsername(userName);
-    if (!user) {
-      throw new Error('User not found');
+    try {
+      const user = await client.user.findUnique({ where: { userName } });
+      return user;
+    } catch (error) {
+      console.error("Error fetching profile:", error);
+      throw new Error("Failed to fetch profile");
     }
-    return user;
+    
   },
 };
 
