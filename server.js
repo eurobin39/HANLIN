@@ -2,10 +2,10 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 import { ApolloServer } from 'apollo-server';
-import { typeDefs } from './typedefs.js';
+import { typeDefs } from './User/user.typedefs.js';
 
-// Assuming resolvers are correctly defined and imported
-import resolvers from './resolvers.js';
+import { resolvers } from './User/user.resolvers.js';
+
 
 const PORT = process.env.PORT;
 
