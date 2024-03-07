@@ -10,9 +10,9 @@
 
 ## User:
 
-## createAccount[] - Mutation works
-## seeProfile[] - Queries works.
-## Login[]
+## createAccount[0] - Mutation works 
+## seeProfile[0] - Queries works.
+## Login[0]
 ## updateProfile[]
 ## autherntication[]
 
