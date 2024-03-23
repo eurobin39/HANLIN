@@ -1,21 +1,33 @@
 import dotenv from 'dotenv';
 dotenv.config();
 
+// server.js
 import { ApolloServer } from 'apollo-server';
-import { typeDefs } from './User/user.typedefs.js';
+import getSchema from './schema.js';
+import { getUser, protectResolver } from './User/users.utils.js';
 
-import { resolvers } from './User/user.resolvers.js';
+async function startServer() {
 
+  const schema = await getSchema();
 
-const PORT = process.env.PORT;
-
-const server = new ApolloServer({
-    typeDefs,
-    resolvers,
-});
-
+  const server = new ApolloServer({ 
+    
+    schema,
+    context: async({req}) => {
+    return{
+      loggedInUser: await getUser(req.headers.token),
+      protectResolver,
+    };
+    },
+  
+  });
+  const PORT = process.env.PORT;
+  
 server
   .listen(PORT)
   .then(() =>
     console.log(`🚀Server is running on http://localhost:${PORT} ✅`)
   );
+}
+
+  startServer();

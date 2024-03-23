@@ -1,8 +1,7 @@
-
 import { gql } from "apollo-server";
 
-const typeDefs = gql`
-type User{
+export default gql`
+  type User {
     id: String!
     firstName: String!
     lastName: String
@@ -10,16 +9,5 @@ type User{
     email: String!
     createdAt: String!
     updatedAt: String!
-}
-
-type Mutation{
-    createAccount(firstName: String!, lastName: String,
-    userName: String!, email: String!, password: String!): User
-}
-
-type Query{
-    seeProfile(userName: String): User
-}
+  }
 `;
-
-export { typeDefs };
