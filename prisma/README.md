@@ -13,7 +13,7 @@
 ## createAccount[0] - Mutation works 
 ## seeProfile[0] - Queries works.
 ## Login[0]
-## updateProfile[]
+## updateProfile[0]
 ## autherntication[]
 
 ## protecting Resolvers[]
